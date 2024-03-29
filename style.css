@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --aqua-green: #00ec99;
+    --dark-aqua-green: #007174;
+    --orange: #ffa400;
+    --dark-blue: #2a2a72;
+    --text-black: #000;
+    --text-white: #fff;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-black);
+}
+
+header {
+    background-color: var(--aqua-green);
+
+}
+
+.headline {
+    display: flex;
+}
+
+footer {
+    background-color: var(--dark-blue);
+    
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
