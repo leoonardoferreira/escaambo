@@ -1,0 +1,76 @@
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-black);
+    background-color: #2a2a72;
+    color: #030303;
+}
+
+a{
+    text-decoration: none ;
+    color:#00ec99;
+}
+#Login{
+    text-align: center;
+    align-items: center;
+}
+
+    .login-container{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+       
+    }
+    
+
+
+
+
+
+
+.email input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: #eeeeed;
+    color: #2a2a72;
+ 
+}
+
+.senha input {
+    border-radius: 15px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 15px;
+    background-color: #eeeeed;
+    color: #2a2a72;
+    margin-top: 15px;
+ 
+}
+
+.entrar input {
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: #e4990d;
+    color: #2a2a72;
+
+}
+input::placeholder{
+    color: rgb(240, 255, 247);
+}
+h1{
+    color: #030303;
+}
+.caixa{
+    margin-top: 65px;
+}
+input:focus{
+    outline: none;
+}

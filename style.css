@@ -59,8 +59,8 @@ nav ul li a:hover {
 
 h1 {
     color: var(--dark-aqua-green);
-    font-size: 4rem;
-
+    font-size: 2rem;
+   position: relative;
     max-width: 41.875rem;
 }
 
@@ -90,6 +90,7 @@ footer {
 footer > a {
     color: var(--text-white);
     display: flex;
+   
 }
 
 footer h1 {
@@ -98,4 +99,7 @@ footer h1 {
 
 footer p a {
     color: var(--baby-blue);
+    
 }
+
+
