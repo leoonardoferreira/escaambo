@@ -28,11 +28,11 @@ body {
 
 /* troquei a referencia no css de Login para login, pois no HTML está minusculo. Antes, o CSS não estava conseguindo encontrar a div#login */
 #login { 
-    max-width: 476px;
+    max-width: 28rem;
     align-items: center;
     
     border-radius: 20px;
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
     
     border: .5px var(--grey) solid;
     
@@ -44,7 +44,7 @@ body {
 h1 {
     color: var(--text-black);
     font-size: 1.25rem;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 input {
@@ -53,7 +53,7 @@ input {
     
     width: 100%;
     padding: 1.25rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
     
     border: 1px solid var(--grey);
     
@@ -75,10 +75,11 @@ button {
     font-size: 1rem;
     font-weight: 600;
     
+    border: 0;
+    
     border-radius: 10px;
     
-    background-color: var(--text-black);
-    color: var(--text-white);
+    background-color: #00ec99;
 }
 
 button:hover {
