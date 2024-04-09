@@ -18,6 +18,17 @@
     --text-white: #fff;
 }
 
+::-webkit-scrollbar {
+    width: 1.125rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c8c8c8;
+    background-clip: content-box;
+    border: 6px solid transparent;
+    border-radius: .625rem;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     color: var(--text-black);
@@ -56,6 +67,7 @@ header>a:hover {
 h1 {
     color: var(--dark-aqua-green);
     max-width: 37.5rem;
+    font-weight: 900;
 
     font-size: clamp(2rem, 2rem + 1vw, 6rem);
 
@@ -136,11 +148,24 @@ div.carousel {
 }
 
 div.carousel-item {
+    display: grid;
+    place-items: center;
+
+    font-size: clamp(1.5rem, 1.5rem + 1vw, 2rem);
+
     background-color: var(--orange);
     width: 490px;
     height: 24.5rem;
     flex-shrink: 0;
+    border-radius: 20px;
+    background-image: url(img/aula-de-ingles.jpeg);
+    background-size: contain;
 }
+
+div.carousel-item img {
+    width: clamp(1rem, 1rem + 1vw, 1.5rem);
+}
+
 
 footer {
     background-color: var(--dark-blue);
@@ -196,6 +221,19 @@ a.register {
     color: #2a2a72;
     text-decoration: none;
     margin-bottom: 1rem;
+}
+
+@keyframes trocarImagens {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        background-image: url('imagem2.jpg'); /* Troca para a segunda imagem */
+        opacity: 1;
+    }
 }
 
 @media (min-width: 1024px) {
