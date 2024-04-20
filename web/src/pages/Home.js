@@ -1,16 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
+import Footer from "../components/Footer";
+
 import logo from '../assets/logo.svg';
 import illustrationStudying from '../assets/illustration-studying.svg';
 import iconProfileOk from '../assets/icon-profile-ok.svg';
 import iconLocation from '../assets/icon-location.svg';
 import iconVoucher from '../assets/icon-voucher.svg';
 import iconSkammboPoints from '../assets/icon-skamboo-points.svg';
-import iconInstagram from '../assets/logo-instagram.svg';
 
-
-const HomeContainer = styled.div``;
+const HomeContainer = styled.div`
+    
+`;
 
 function Home() {
     return(
@@ -80,18 +82,7 @@ function Home() {
             <section>
                 <a class="register" href="login.html">Comece por aqui, faça seu cadastro</a>
             </section>
-            <footer>
-                <a href="#">
-                    <p>Voltar ao topo</p> 
-                </a>
-                
-                <img class="logo" src={logo} alt=""/>
-
-                <p>Contate-nos via e-mail para esclarecer dúvidas: <a href="mailto:helloskambee@gmail.com">helloskamboo@gmail.com</a></p>
-
-                <img src={iconInstagram} alt=""/>
-                    
-            </footer>
+            <Footer></Footer>
         </HomeContainer>
     
     );
