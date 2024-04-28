@@ -18,22 +18,25 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
 
-        list-style: none;
     }
-
+    
     ::-webkit-scrollbar {
         width: 1.125rem;
     }
-
+    
     ::-webkit-scrollbar-thumb {
         background: #c8c8c8;
         background-clip: content-box;
         border: 6px solid transparent;
         border-radius: .625rem;
     }
-
+    
     body {
         font-family: 'Inter', sans-serif;
+    }
+
+    li {
+        list-style: none;
     }
 `;
 

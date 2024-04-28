@@ -1,20 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo-baby-blue.svg';
 import iconInstagram from '../assets/logo-instagram.svg';
 
 const FooterContainer = styled.footer`
     background-color: var(--dark-blue);
     width: 100%;
 
-    border-top-left-radius: clamp(1.5rem, 1.5rem + 1vw, 2.5rem);
-    border-top-right-radius: clamp(1.5rem, 1.5rem + 1vw, 2.5rem);
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
 
     color: var(--text-white);
 
 
-    /* footer > a {
+    a {
         display: flex; 
         margin-bottom: 1rem;
         
@@ -23,24 +23,24 @@ const FooterContainer = styled.footer`
         
     }
 
-    footer img.logo {
+    img.logo {
         display: inline;
         margin-bottom: 1rem;
         max-width: 7.5rem;
+        fill: var(--baby-blue);
     }
 
-    footer p {
+    p {
         margin-bottom: 1rem;
     }
 
-    footer p a {
+    p a {
         color: var(--baby-blue);
     }
 
-    footer img {
-        display: block;
-        margin: 0 auto;
-    } */
+    img {
+        fill: aqua;
+    }
 `;
 
 function Footer() {
@@ -50,11 +50,11 @@ function Footer() {
                     <p>Voltar ao topo</p> 
                 </a>
                 
-                <img src={logo} alt=""/>
+                <img className="logo" src={logo} alt=""/>
 
                 <p>Contate-nos via e-mail para esclarecer dúvidas: <a href="mailto:helloskambee@gmail.com">helloskamboo@gmail.com</a></p>
 
-                <img src={iconInstagram} alt=""/>
+                <img src={iconInstagram} alt="Ícone do Instagram"/>
                     
         </FooterContainer>
     )

@@ -9,8 +9,8 @@ header {
     
     background-color: var(--aqua-green);
 
-    border-end-start-radius: clamp(1.5rem, 1.5rem + 1vw, 2.5rem);
-    border-end-end-radius: clamp(1.5rem, 1.5rem + 1vw,2.5rem);
+    border-end-start-radius: 2rem;
+    border-end-end-radius: 2rem;
 
     text-align: center;
 }
@@ -131,9 +131,6 @@ div.carousel-item {
 div.carousel-item img {
     width: clamp(1rem, 1rem + 1vw, 1.5rem);
 }
-
-
-
 
 a.register {
     text-align: center;
