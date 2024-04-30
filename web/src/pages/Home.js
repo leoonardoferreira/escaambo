@@ -16,9 +16,7 @@ const HomeContainer = styled.div`
         padding: 1.25rem;
     }
 
-
     header {
-        
         background-color: var(--aqua-green);
 
         border-end-start-radius: 2rem;
@@ -250,16 +248,16 @@ const StyledLink = styled(Link)`
 //     margin: 0 auto 2rem;
 // `;
 
-const TitleHighlight = styled.span`
-    background-color: var(--dark-aqua-green);
-    color: var(--aqua-green);
-`
+// const TitleHighlight = styled.span`
+//     background-color: var(--dark-aqua-green);
+//     color: var(--aqua-green);
+// `
 
-const ImgLogo = styled.img`
-    max-width: 14rem;
-    display: block;
-    margin: 0 auto;
-`
+// const ImgLogo = styled.img`
+//     max-width: 14rem;
+//     display: block;
+//     margin: 0 auto;
+// `
 
 // const Main = styled.main`
 //     display: flex;
@@ -280,7 +278,7 @@ function Home() {
         <HomeContainer>
             <header>
                 <StyledLink to="/login">Cadastre-se</StyledLink>
-                <div>
+                <div className="headline">
                     <h1><span>aprenda</span> algo novo com <span>pessoas reais</span> de forma <span>gratuita</span></h1>
                     <img className="logo" src={logo} alt="Logo da Skammbo."/>
                 </div>
