@@ -30,7 +30,9 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    padding: 1rem 0 0;
+}
+
+header, div.categories {
 }
 
 header {
@@ -39,16 +41,21 @@ header {
     align-items: center;
 
     margin-bottom: 2rem;
+    padding: 1rem 0;
 }
 
 nav {
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    align-items: end;
+    gap: 2rem;
 }
 
 nav li {
     text-align: center;
+}
+
+li img {
+    max-width: 2rem;
 }
 
 div.categories {
@@ -63,29 +70,61 @@ h2 {
 div.categories>ul {
     display: flex;
     gap: 1rem;
+    overflow-x: scroll;
+    max-width: 53rem;
 }
 
-main {
-    display: grid;
-    grid-template-areas: 
-    "a b"
-    "c d";
-    place-items: center;
-    justify-content: center;
+div.categories>ul>li {
+    border-radius: 2.5rem;
+    padding: .5rem .75rem;
+    border: 1px solid #ccc;
+    text-wrap: nowrap;
+}
+
+.container {
+    /* display: grid; */
+    /* place-items: center;
+    justify-content: center; */
+    
+    /* display: flex; */
+    /* grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    align-items: center; */
+    /* flex-direction: column; */
+
+    /* flex-wrap: wrap;
+    justify-content: space-between; */
+
+    /* align-items: flex-start; */
+
+    column-count: 2;
     gap: 1rem;
+    
+    max-width: 100vw;
+
+    /* background-color: var(--orange); */
+    padding: 0 1rem;
 }
 
 
 div.card {
-    display: flex;
+    display: inline-block;
+    margin-bottom: 1rem;
+    
+    /* flex: 1 0 auto; */
 
     padding: 1rem;
-    width: 400px;
+
     background-color: var(--shock-pink);
     border-radius: 16px;
 
     color: var(--text-white);
 
+
+}
+
+.card img {
+    width: clamp(3rem, 4rem + 1vw, 6rem);
 }
 
 div.user-info {
@@ -93,5 +132,8 @@ div.user-info {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--text-white);
 }
