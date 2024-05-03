@@ -9,9 +9,6 @@ import iconPoints from '../assets/icone-pontos.svg';
 import fotoDePerfil from '../assets/foto-de-perfil.png';
 
 const AppMainContainer = styled.div`
-    height: 100vh;
-    width: 100vw;
-
     header, div.categories, div.container {
         padding: 0 1rem;
     }
@@ -60,7 +57,7 @@ const AppMainContainer = styled.div`
         border-radius: 2.5rem;
         padding: .5rem .75rem;
         border: 1px solid #ccc;
-        /* text-wrap: nowrap; */
+        text-wrap: nowrap;
     }
 
     div.categories>ul>li:hover {
@@ -94,9 +91,8 @@ const AppMainContainer = styled.div`
     div.card {
         padding: 1rem;
 
-        background-color: var(--shock-pink);
+        background-color: var(--orange);
         border-radius: 1rem;
-        color: var(--text-white);
     }
 
     .card img {
@@ -107,6 +103,17 @@ const AppMainContainer = styled.div`
         margin: auto;
     }
 
+    div.price {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        margin-top: 1rem;
+
+        &>img {
+            max-width: 1.5rem;
+        }
+    }
+    
     footer {
         position: fixed;
         bottom: 0;
@@ -143,84 +150,108 @@ const AppMainContainer = styled.div`
 `;
 
 function AppMain() {
-    <AppMainContainer>
-        <header>
-            <img src={logoSmall} alt="" width="300px" height="75px"/>
-            <nav>
+    return (
+        <AppMainContainer>
+            <header>
+                <img src={logoSmall} alt="" width="300px" height="75px"/>
+                <nav>
+                    <ul>
+                        <li>
+                            <img src={iconActivities} alt=""/>
+                            <p>Registro de atividades</p>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <img src={iconProfile} alt=""/>
+                            <p>Meu perfil</p>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <div className="categories">
+                <h2>O que você quer aprender?</h2>
                 <ul>
-                    <li>
-                        <img src={iconActivities} alt=""/>
-                        <p>Registro de atividades</p>
-                    </li>
+                    <li>Inglês</li>
+                    <li>Espanhol</li>
+                    <li>Matemática</li>
+                    <li>Português</li>
+                    <li>Arte</li>
+                    <li>Design</li>
+                    <li>Programação</li>
+                    <li>Violão</li>
+                    <li>Piano</li>
+                    <li>Canto</li>
+                    <li>Guitarra</li>
+                    <li>Surfe</li>
+                    <li>Dança</li>
+                    <li>Pilates</li>
                 </ul>
-                <ul>
-                    <li>
-                        <img src={iconProfile} alt=""/>
-                        <p>Meu perfil</p>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <div className="categories">
-            <h2>O que você quer aprender?</h2>
-            <ul>
-                <li>Inglês</li>
-                <li>Espanhol</li>
-                <li>Matemática</li>
-                <li>Português</li>
-                <li>Arte</li>
-                <li>Design</li>
-                <li>Programação</li>
-                <li>Violão</li>
-                <li>Piano</li>
-                <li>Canto</li>
-                <li>Guitarra</li>
-                <li>Surfe</li>
-                <li>Dança</li>
-                <li>Pilates</li>
-            </ul>
-        </div>
-        <main>
-            <div className="container">
-                <div className="card">
-                    <img src={fotoDePerfil} alt="" className="pfp"/>
-                    <div className="user-info">
-                        <h3>Leonardo</h3>
-                        <p>Professor de inglês</p>
-                        <div className="price">
-                            <img src={iconPoints} alt="" className="icon-points"/>
-                            <p><b>17</b> pontos por hora</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="card">
-                    <img src={fotoDePerfil} alt="" className="pfp"/>
-                    <div className="user-info">
-                        <h3>Leonardo</h3>
-                        <p>Professor de inglês</p>
-                        <div className="price">
-                            <img src={iconPoints} alt="" className="icon-points"/>
-                            <p><b>17</b> pontos por hora</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="card">
-                    <img src={fotoDePerfil} alt="" className="pfp"/>
-                    <div className="user-info">
-                        <h3>Leonardo</h3>
-                        <p>Professor de inglês</p>
-                        <div className="price">
-                            <img src={iconPoints} alt="" className="icon-points"/>
-                            <p><b>17</b> pontos por hora</p>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </main>
-        <footer>
-            <p>escaambo.</p>
-        </footer>
-    </AppMainContainer>
+            <main>
+                <div className="container">
+                    <div className="card">
+                        <img src={fotoDePerfil} alt="" className="pfp"/>
+                        <div className="user-info">
+                            <h3>Leonardo</h3>
+                            <p>Professor de inglês</p>
+                            <div className="price">
+                                <img src={iconPoints} alt="" className="icon-points"/>
+                                <p><b>17</b> pontos por hora</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <img src={fotoDePerfil} alt="" className="pfp"/>
+                        <div className="user-info">
+                            <h3>Leonardo</h3>
+                            <p>Professor de inglês</p>
+                            <div className="price">
+                                <img src={iconPoints} alt="" className="icon-points"/>
+                                <p><b>17</b> pontos por hora</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <img src={fotoDePerfil} alt="" className="pfp"/>
+                        <div className="user-info">
+                            <h3>Leonardo</h3>
+                            <p>Professor de inglês</p>
+                            <div className="price">
+                                <img src={iconPoints} alt="" className="icon-points"/>
+                                <p><b>17</b> pontos por hora</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <img src={fotoDePerfil} alt="" className="pfp"/>
+                        <div className="user-info">
+                            <h3>Leonardo</h3>
+                            <p>Professor de inglês</p>
+                            <div className="price">
+                                <img src={iconPoints} alt="" className="icon-points"/>
+                                <p><b>17</b> pontos por hora</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <img src={fotoDePerfil} alt="" className="pfp"/>
+                        <div className="user-info">
+                            <h3>Leonardo</h3>
+                            <p>Professor de inglês</p>
+                            <div className="price">
+                                <img src={iconPoints} alt="" className="icon-points"/>
+                                <p><b>17</b> pontos por hora</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <p>escaambo.</p>
+            </footer>
+        </AppMainContainer>
+    )
 }
 
 export default AppMain;
