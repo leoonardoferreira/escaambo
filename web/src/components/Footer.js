@@ -6,12 +6,13 @@ import iconInstagram from '../assets/logo-instagram.svg';
 
 const FooterContainer = styled.footer`
     background-color: var(--dark-blue);
+    color: var(--text-white);
+
     width: 100%;
+    padding: 2rem;
 
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
-
-    color: var(--text-white);
 
 
     a {

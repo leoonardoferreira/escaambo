@@ -5,8 +5,12 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 // import SignUp from './pages/SignUp';
 import AppMain from './pages/AppMain';
+import ActivityLog from './pages/ActivityLog';
+import Profile from './pages/Profile';
+
 
 import GlobalStyles from './styles/GlobalStyles';
+import Scheduling from './pages/Scheduling';
 
 function App() {
   return (
@@ -16,6 +20,9 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/app" element={<AppMain/>}/>
+        <Route path="/atividades" element={<ActivityLog />} />
+        <Route path="/perfil" element={<Profile />} />
+        <Route path="/agendamento" element={<Scheduling />} />
       </Routes>
     </Router>
   );

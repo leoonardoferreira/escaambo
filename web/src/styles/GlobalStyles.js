@@ -17,7 +17,12 @@ const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+    }
 
+    *::selection {
+        background-color: #0c0c0c;
+        color: #fff;
     }
     
     ::-webkit-scrollbar {
@@ -29,10 +34,6 @@ const GlobalStyles = createGlobalStyle`
         background-clip: content-box;
         border: 6px solid transparent;
         border-radius: .625rem;
-    }
-    
-    body {
-        font-family: 'Inter', sans-serif;
     }
 
     li {

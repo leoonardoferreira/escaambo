@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const LoginContainer = styled.div`
+export const LoginContainer = styled.div`
     display: grid;
     place-items: center;
     
@@ -71,19 +70,3 @@ const LoginContainer = styled.div`
         font-weight: bold;
     }
 `;
-
-function Login() {
-    return(
-        <LoginContainer>
-            <div className="login">
-                <h1>Login</h1>
-                <input class="email" type="email" aria-label="E-mail" placeholder="E-mail"/>
-                <input type="password" aria-label="Senha" placeholder="Senha"/>    
-                <button type="submit" value="Entrar">Entrar</button>
-                <a href="#">Esqueci minha senha</a>
-            </div>
-        </LoginContainer>
-    )
-}
-
-export default Login;
