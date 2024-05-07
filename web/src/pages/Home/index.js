@@ -68,7 +68,7 @@ function Home() {
                     </li>
                     <li>
                         <img src={iconSkammboPoints} alt=""/>
-                        <p>Ganhe Skamboo points lecionando para outras pessoas.</p>
+                        <p>Ganhe Skammbo points lecionando para outras pessoas.</p>
                     </li>
                 </ul>
 
