@@ -69,4 +69,23 @@ export const LoginContainer = styled.div`
         color: var(--text-black);
         font-weight: bold;
     }
+    main{
+    display: flex;
+    flex-direction: row;
+    align-item: flex-start;
+    width: 40%;
+    gap:20px;
+    margin-bottom:20px;
+    background-color: FFEFD5;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    }
+
+   img{
+    margin: 0 auto;
+   }
+  
 `;
+

@@ -1,11 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
+
+
+
 const SignUpContainer = styled.div`
-    display: grid;
-    place-items: center;
-    
-    height: 100vh;
+   max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
     .signup {
         max-width: 28rem;
@@ -70,20 +75,49 @@ const SignUpContainer = styled.div`
         color: var(--text-black);
         font-weight: bold;
     }
+   
 `;
+
+
+const Content = styled.section`
+    display: flex;
+    flex-direction: row;
+    align-item: flex-start;
+    width: 50%;
+    gap:20px;
+    margin-bottom:20px;
+    background-color: FFEFD5;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+`
 
 function SignUp() {
     return(
         <SignUpContainer>
+       
+        <Content> 
+       
+        
+        
             <div className="signup">
+           
                 <h1>Cadastre-se</h1>
+                <input class="nome" type="nome" aria-label="Nome" placeholder="Nome"/>
                 <input class="email" type="email" aria-label="E-mail" placeholder="E-mail"/>
                 <input type="password" aria-label="Senha" placeholder="Senha"/>    
                 <button type="submit" value="Entrar">Entrar</button>
-                <a href="#">Já tem uma conta? Entre aqui</a>
-
+               
+               
             </div>
+           
+        </Content>
+        
+        <a href="#">Já tem uma conta? Entre aqui</a>
+   
         </SignUpContainer>
+       
     )
 }
 
