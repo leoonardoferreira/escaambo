@@ -94,6 +94,7 @@ const Content = styled.section`
 `
 
 function SignUp() {
+ 
     return(
         <SignUpContainer>
        
@@ -104,6 +105,7 @@ function SignUp() {
             <div className="signup">
            
                 <h1>Cadastre-se</h1>
+                
                 <input class="nome" type="nome" aria-label="Nome" placeholder="Nome"/>
                 <input class="email" type="email" aria-label="E-mail" placeholder="E-mail"/>
                 <input type="password" aria-label="Senha" placeholder="Senha"/>    
