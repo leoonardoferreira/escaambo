@@ -47,10 +47,6 @@ const FooterContainer = styled.footer`
 function Footer() {
     return(
         <FooterContainer>
-                <a href="#">
-                    <p>Voltar ao topo</p> 
-                </a>
-                
                 <img className="logo" src={logo} alt=""/>
 
                 <p>Contate-nos via e-mail para esclarecer dúvidas: <a href="mailto:helloskambee@gmail.com">helloskamboo@gmail.com</a></p>

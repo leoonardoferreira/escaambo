@@ -5,9 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import AppMain from './pages/AppMain';
-import ActivityLog from './pages/ActivityLog';
 import Profile from './pages/Profile';
-import Scheduling from './pages/Scheduling';
 
 
 import GlobalStyles from './styles/GlobalStyles';
@@ -19,11 +17,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/cadastro" element={<SignUp />} />
         <Route path="/app" element={<AppMain/>}/>
-        <Route path="/atividades" element={<ActivityLog />} />
-        <Route path="/perfil" element={<Profile />} />
-        <Route path="/agendamento" element={<Scheduling />} />
+        <Route path="/perfil/" element={<Profile />} />
       </Routes>
     </Router>
   );

@@ -12,7 +12,7 @@ function Profile() {
             <Header />
             <main>
                 <div className="headline">
-                    <img src={fotoDePerfil}/>
+                    <img src={fotoDePerfil} alt=""/>
                     <div className="h1">
                         <h1>Leonardo Ferreira</h1>
                         <button>Editar perfil</button>
@@ -33,9 +33,9 @@ function Profile() {
                     </ul>
                 </div>
                 <div className="images">
-                    <img />
-                    <img />
-                    <img />
+                    <img alt=""/>
+                    <img alt=""/>
+                    <img alt=""/>
                 </div>
                 <div className="buttons">
                     <button>Deletar conta</button>

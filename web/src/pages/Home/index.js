@@ -48,7 +48,7 @@ function Home() {
                     </p>
                     
                     <p>
-                        Tem alguma habilidade que as outras pessoas gostariam de aprender? <span class="highlight">Ensine e, em troca</span>, você pode também ter aulas em assuntos diversos.
+                        Tem alguma habilidade que as outras pessoas gostariam de aprender? <span className="highlight">Ensine e, em troca</span>, você pode também ter aulas em assuntos diversos.
                     </p>
                 </div>
                 <img src={illustrationStudying} alt="Ilustração de álguem estudando, lendo um livro laranja"/>
@@ -92,7 +92,7 @@ function Home() {
                 </div>
             </section>
             <section>
-                <a class="register" href="login.html">Comece por aqui, faça seu cadastro</a>
+                <a className="register" href="login.html">Comece por aqui, faça seu cadastro</a>
             </section>
             <Footer></Footer>
         </HomeContainer>
