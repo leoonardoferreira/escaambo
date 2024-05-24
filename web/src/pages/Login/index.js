@@ -8,7 +8,7 @@ import Footer from "../../components/Footer";
 function Login() {
     return(
         <LoginContainer>
-            <img className="logo" src={logo} alt="Logo da Skammbo."/>
+            {/* <img className="logo" src={logo} alt="Logo da Skammbo."/> */}
            
             <main> 
                 <div className="login">

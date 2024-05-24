@@ -80,6 +80,12 @@ function Home() {
                         <div className="content-wrapper">
                             <img src="img/icon-english.svg" alt=""/>
                             <h3>Inglês</h3>
+                           
+
+                            {/* <div className="content-wrapper">
+                                <img src ="img/icon-reforco-escolar.svg"/>
+                                <h4> Esforço escolar</h4>
+                            </div> */}
                         </div>
                     </div>
                     <div className="carousel-item">
