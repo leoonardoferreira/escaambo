@@ -1,77 +1,65 @@
-import React, {useState, useRef} from 'react'
-import axios from 'axios'
+import React, {useState, useRef} from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Form({fetchPersonagens}){
+import { api } from '../services/api';
+
+function Form() {
     const [nome, setNome] = useState('')
-    const [descricao, setDescricao] = useState('')
-    const [imagem, setImagem] = useState(null)
-    const [fileInputKey, setFileInputKey] = useState(Date.now())
-    const MAX_DESC_LENGTH = 500
-    const formRef = useRef(null)
+    const [email, setEmail] = useState('')
+    const [senha, setSenha] = useState('')
 
-    const handleSubmit = async (e) =>{
-        e.preventDefault()
-        const formData = new FormData()
-        formData.append('nome', nome)
-        formData.append('texto', descricao)
-        formData.append('foto', imagem)
+    const navigate = useNavigate();
 
-        try{
-            await axios.post('http://localhost:5000/api/personagens', formData,{
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
-            })
-            setNome('')
-            setDescricao('')
-            setImagem(null)
-            setFileInputKey(Date.now())
-            // fetchPersonagens();
-        } catch (error){
-            console.error('Erro ao enviar o personagem', error)
+    const formRef = useRef(null);
+
+    function handleSubmit() {
+        if(!nome || !email || !senha) {
+            return alert('Preencha todos os campos!');
         }
-    }
 
-    const handleImageChange = (event) =>{
-        setImagem(event.target.files[0])
-    }
-
-    const handleDescricaoChange = (e) => {
-        const texto = e.target.value
-        if(texto.length <= MAX_DESC_LENGTH){
-            setDescricao(texto)
-        }
+        api.post('/usuarios', { nome, email, senha })
+        .then(() => {
+            alert('Usuário Cadastrado com sucesso');;
+            navigate("/app");
+        })
+        .catch(error => {
+            if(error.response) {
+                alert(error.response.data.message);
+            } else {
+                alert('Não foi possível cadastrar');
+            }
+        });
     }
 
     return(
-        <form onSubmit={handleSubmit} ref={formRef}>
+        <form ref={formRef}>
             <input
             type="text"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
-            placeholder="Nome do Personagem"
+            placeholder="Nome"
             required
             />
-            <br/><br/>
-            <textarea
-            value={descricao}
-            onChange={handleDescricaoChange}
-            // onChange={(e) => setDescricao(e.target.value)}
-            placeholder="Descrição do Personagem"
-            required
-            />
-            <div>{MAX_DESC_LENGTH - descricao.length} caracteres restantes</div>
             <br/><br/>
             <input
-            type="file"
-            key={fileInputKey}
-            onChange={handleImageChange}
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="E-mail"
             required
             />
             <br/><br/>
-            <button type="submit">Cadastrar</button>
+            <input
+            type="password"
+            value={senha}
+            // key={fileInputKey}
+            onChange={(e) => setSenha(e.target.value)}
+            placeholder="Senha"
+            required
+            />
             <br/><br/>
-            <hr/>
+            <button onClick={handleSubmit}>Cadastrar</button>
+            <br/><br/>
             <br/><br/>
         </form>
     )

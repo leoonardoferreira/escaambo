@@ -26,6 +26,23 @@ const StyledLink = styled(Link)`
     }
 `;
 
+const StyledButton = styled(Link)`
+    text-align: center;
+    width: 100%;
+    max-width: 37.5rem;
+    display: block;
+    margin: 0 auto;
+    background-color: #88CCF1;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: .5rem 1rem;
+    border: 0;
+    color: #2a2a72;
+    text-decoration: none;
+    margin-bottom: 1rem;
+`;
+
 function Home() {
     return(
         <HomeContainer>
@@ -92,7 +109,7 @@ function Home() {
                 </div>
             </section>
             <section>
-                <a className="register" href="login.html">Comece por aqui, faça seu cadastro</a>
+                <StyledButton to="/cadastro">Comece por aqui, faça seu cadastro</StyledButton>
             </section>
             <Footer></Footer>
         </HomeContainer>

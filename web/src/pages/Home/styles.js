@@ -130,24 +130,7 @@ export const HomeContainer = styled.div`
     div.carousel-item img {
         width: clamp(1rem, 1rem + 1vw, 1.5rem);
     }
-
-    a.register {
-        text-align: center;
-        width: 100%;
-        max-width: 37.5rem;
-        display: block;
-        margin: 0 auto;
-        background-color: #88CCF1;
-        border-radius: 30px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        padding: .5rem 1rem;
-        border: 0;
-        color: #2a2a72;
-        text-decoration: none;
-        margin-bottom: 1rem;
-    }
-
+    
     @keyframes trocarImagens {
         0% {
             opacity: 1;
