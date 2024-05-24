@@ -1,25 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+
+import axios from 'axios';
+
 import { ProfileContainer } from "./styles";
 
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-import fotoDePerfil from '../../assets/foto-de-perfil.png'
-
 function Profile() {
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const [usuario, setUsuario] = useState(null);
+
+    useEffect(() => {
+        const fetchUsuario = async () => {
+        try {
+            const response = await axios.get(`http://localhost:3333/api/usuarios/${id}`);
+            setUsuario(response.data);
+        } catch (error) {
+            console.error('Erro ao buscar usuário', error);
+        }
+        };
+
+        fetchUsuario();
+    }, [id]);
+
+    if (!usuario) {
+        return <div>Carregando...</div>;
+    }
+
     return(
         <ProfileContainer>
             <Header />
             <main>
                 <div className="headline">
-                    <img src={fotoDePerfil} alt=""/>
+                    <img src={`http://localhost:3333/uploads/${usuario.foto}`}alt={usuario.nome}/>
                     <div className="h1">
-                        <h1>Leonardo Ferreira</h1>
+                        <h1>{usuario.nome}</h1>
                         <button>Editar perfil</button>
                     </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae ultricies eget, tempor sit amet ante. Donec eu libero sit amet quam egestas semper. Quisque sed dapibus nisl. Nunc eget tortor in tellus interdum fringilla. Donec rutrum congue leo eget malesuada. Praesent laoreet malesuada cursus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                    </p>
+                    {/* <p>
+                        {usuario.texto}
+                    </p> */}
                 </div>
                 <div className="categories">
                     <h2>O que eu posso te ensinar</h2>
@@ -39,7 +62,6 @@ function Profile() {
                 </div>
                 <div className="buttons">
                     <button>Deletar conta</button>
-                    <button>Agendar aula</button>
                 </div>
             </main>
             <Footer />

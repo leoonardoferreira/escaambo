@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { api } from '../../services/api';
+
 import { AppMainContainer } from './styles';
 
 import Header from '../../components/Header';
@@ -6,39 +8,40 @@ import ProfileCard from '../../components/ProfileCard';
 
 
 function AppMain() {
+    const [usuarios, setUsuarios] = useState([])
+
+    useEffect(() => {
+        const fetchUsuarios = async () => {
+            try {
+                const response = await api.get('/usuarios')
+                setUsuarios(response.data)
+            } catch(error) {
+                console.error('Erro ao buscar o personagem', error)
+            }
+        }
+
+        fetchUsuarios()
+    }, [])
+
     return (
         <AppMainContainer>
             <Header />
             <div className="categories">
                 <h2>O que você quer aprender?</h2>
                 <ul>
-                    <li>Inglês</li>
-                    <li>Espanhol</li>
-                    <li>Matemática</li>
-                    <li>Português</li>
-                    <li>Arte</li>
-                    <li>Design</li>
-                    <li>Programação</li>
-                    <li>Violão</li>
-                    <li>Piano</li>
-                    <li>Canto</li>
-                    <li>Guitarra</li>
-                    <li>Surfe</li>
-                    <li>Dança</li>
-                    <li>Pilates</li>
+                    <li>Escolha um(a) professor(a) para ver mais detalhes</li>
                 </ul>
             </div>
             <main>
                 <div className="container">
-                    <ProfileCard />
-                    <ProfileCard />
-                    <ProfileCard />
-                    <ProfileCard />
+                    <ProfileCard usuarios={usuarios}/>
                 </div>
             </main>
             <footer>
                 <p>escaambo.</p>
             </footer>
+
+            
         </AppMainContainer>
     )
 }

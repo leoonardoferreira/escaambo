@@ -1,34 +1,40 @@
 import React, {useState, useRef} from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import { api } from '../services/api';
 
 function Form() {
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
-    const [senha, setSenha] = useState('')
-
-    const navigate = useNavigate();
+    const [foto, setFoto] = useState(null)
+    const [fileInputKey, setFileInputKey] = useState(Date.now())
 
     const formRef = useRef(null);
 
-    function handleSubmit() {
-        if(!nome || !email || !senha) {
-            return alert('Preencha todos os campos!');
-        }
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const formData = new FormData()
+        formData.append('nome', nome)
+        formData.append('email', email)
+        formData.append('foto', foto)
 
-        api.post('/usuarios', { nome, email, senha })
-        .then(() => {
-            alert('Usuário Cadastrado com sucesso');;
-            navigate("/app");
-        })
-        .catch(error => {
-            if(error.response) {
-                alert(error.response.data.message);
-            } else {
-                alert('Não foi possível cadastrar');
-            }
-        });
+        try {
+            await api.post('/usuarios', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            })
+            setNome('')
+            setEmail('')
+            setFoto(null)
+            setFileInputKey(Date.now())
+
+        } catch (error) {
+            console.error('Erro ao enviar o personagem', error)
+        }
+    }
+
+    const handleFotoChange = (event) =>{
+        setFoto(event.target.files[0])
     }
 
     return(
@@ -50,11 +56,9 @@ function Form() {
             />
             <br/><br/>
             <input
-            type="password"
-            value={senha}
-            // key={fileInputKey}
-            onChange={(e) => setSenha(e.target.value)}
-            placeholder="Senha"
+            type="file"
+            key={fileInputKey}
+            onChange={handleFotoChange}
             required
             />
             <br/><br/>

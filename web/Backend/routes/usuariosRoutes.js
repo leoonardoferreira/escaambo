@@ -6,10 +6,10 @@ const UsuariosController = require('../controllers/usuariosController');
 
 const usuariosController = new UsuariosController;
 
-router.post('/', usuariosController.create)
-router.put('/:id', usuariosController.update)
-// router.get('/', usuariosController.getAllPersonagem)
-// router.get('/:id', usuariosController.getPersonagemById)
-// router.delete('/:id', usuariosController.deletePersonagem)
+router.post('/', upload.single('foto'), usuariosController.create)
+router.put('/:id', upload.single('foto'), usuariosController.update)
+router.get('/', usuariosController.getAllUsuarios)
+router.get('/:id', usuariosController.getUsuarioById)
+router.delete('/:id', usuariosController.delete)
 
 module.exports = router

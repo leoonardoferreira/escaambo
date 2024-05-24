@@ -47,7 +47,11 @@ function Home() {
     return(
         <HomeContainer>
             <header>
-                <StyledLink to="/login">Cadastre-se</StyledLink>
+                <nav>
+                    <StyledLink to="/cadastro">Cadastre-se</StyledLink>
+                    <StyledLink to="/app">Professores</StyledLink>
+                    <StyledLink to="/">A escamboo.</StyledLink>
+                </nav>
                 <div className="headline">
                     <h1><span>aprenda</span> algo novo com <span>pessoas reais</span> de forma <span>gratuita</span></h1>
                     <img className="logo" src={logo} alt="Logo da Skammbo."/>

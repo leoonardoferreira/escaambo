@@ -11,6 +11,7 @@ export const AppMainContainer = styled.div`
     div.categories {
         margin: 0 auto 2rem;
         max-width: fit-content;
+        text-align: center;
     }
 
     h2 {

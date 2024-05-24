@@ -1,18 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from 'react-router-dom'
 
-import fotoDePerfil from '../assets/foto-de-perfil.png';
-import iconPoints from '../assets/icone-pontos.svg';
 
 const CardWrapper = styled.div`
     padding: 1rem;
 
     background-color: var(--orange);
     border-radius: 1rem;
-
-    img {
-        width: clamp(3rem, 4rem + 1vw, 6rem);
-    }
 
     div.user-info {
         margin: auto;
@@ -30,20 +25,42 @@ const CardWrapper = styled.div`
     }
 `; 
 
+const StyledImage = styled.img`
+    width: clamp(3rem, 4rem + 1vw, 6rem);
+    border-radius: 50%;
+    object-fit: fill;
+`;
 
-function ProfileCard() {
+const Button = styled.button`
+    width: 50%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    &:hover{
+        background-color: #394c73;
+    }
+`
+
+function ProfileCard({usuarios}) {
+    const navigate = useNavigate()
+
+    const handleLearnMore = (id) =>{
+        navigate(`/perfil/${id}`)
+    }
+
     return(
-        <CardWrapper>
-            <img src={fotoDePerfil} alt="" className="pfp"/>
-            <div className="user-info">
-                <h3>Leonardo</h3>
-                <p>Professor de inglês</p>
-                <div className="price">
-                    <img src={iconPoints} alt="" className="icon-points"/>
-                    <p><b>17</b> pontos por hora</p>
-                </div>
-            </div>
-        </CardWrapper>
+        <>
+            {usuarios.map((usuario)=>(
+                <CardWrapper key={usuario.id}>
+                    <StyledImage src={`http://localhost:3333/uploads/${usuario.foto}`} alt={usuario.nome} />
+                    <h3>{usuario.nome}</h3>
+                    <Button onClick={() => handleLearnMore(usuario.id)}>Ver mais</Button>
+                </CardWrapper>
+                ))}
+        </>
     )
 }
 

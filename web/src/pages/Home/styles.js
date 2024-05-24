@@ -29,6 +29,12 @@ export const HomeContainer = styled.div`
         color: #003335;
     }
 
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 2rem
+    }
+
     h1 {
         color: var(--dark-aqua-green);
         max-width: 37.5rem;

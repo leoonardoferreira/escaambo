@@ -8,7 +8,7 @@ export const ListContainer = styled.div`
   margin: 0 auto;
 `;
 
-export const PersonagemCard = styled.div`
+export const UsuarioCard = styled.div`
   display: flex;
   align-items: center;
   width: 80%;
@@ -20,7 +20,7 @@ export const PersonagemCard = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
-export const PersonagemImage = styled.img`
+export const UsuarioImage = styled.img`
   width: 100px;
   height: 100px;
   object-fit: cover;
@@ -28,18 +28,18 @@ export const PersonagemImage = styled.img`
   margin-right: 20px;
 `;
 
-export const PersonagemInfo = styled.div`
+export const UsuarioInfo = styled.div`
   flex: 1;
 `;
 
-export const PersonagemNome = styled.h3`
+export const UsuarioNome = styled.h3`
   margin: 0;
   margin-bottom: 10px;
   font-size: 1.2em;
   color: #333;
 `;
 
-export const PersonagemDescricao = styled.p`
+export const UsuarioDescricao = styled.p`
   margin: 0;
   margin-bottom: 10px;
   color: #666;
