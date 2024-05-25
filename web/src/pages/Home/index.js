@@ -48,9 +48,9 @@ function Home() {
         <HomeContainer>
             <header>
                 <nav>
-                    <StyledLink to="/">A escamboo.</StyledLink>
+                    <StyledLink to="/">Home</StyledLink>
                     <StyledLink to="/app">Professores</StyledLink>
-                    <StyledLink to="/cadastro">Cadastre-se</StyledLink>
+                    <StyledLink to="/cadastro">Cadastro</StyledLink>
                 </nav>
                 <div className="headline">
                     <h1><span>aprenda</span> algo novo com <span>pessoas reais</span> de forma <span>gratuita</span></h1>

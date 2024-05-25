@@ -17,9 +17,6 @@ function SignUp() {
                 {/* <h1>Usuários já cadastrados</h1>
                 <UsuarioList refresh={refresh} setRefresh={setRefresh}/> */}
             </Content>
-            <footer>
-                <p>escaambo.</p>
-            </footer>
         </SignUpContainer>
        
     )

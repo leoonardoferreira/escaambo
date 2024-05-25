@@ -8,8 +8,8 @@ Modal.setAppElement('#root')
 const ModalContent = styled.div`
     background: #fff;
     padding: 20px;
-    border-radius: 10px;
-    max-width: 500px;
+    border-radius: 20px;
+    max-width: 40rem;
     margin: 0 auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `
@@ -22,22 +22,38 @@ const Form = styled.form`
     flex-direction: column;
 `
 const Input = styled.input`
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    border: 0;
+    background-color: var(--baby-blue);
+    border-radius: 20px;
+    `
+
+const TextArea = styled.textarea`
+    background-color: var(--baby-blue);
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+    border: 0;
+    resize: none;
+
+    &::placeholder {
+        color: black;
+    }
 `
 
 const Button = styled.button`
-    padding: 10px;
+    font-weight: bold;
+    padding: 1rem;
     margin-top: 10px;
     border: none;
-    border-radius: 5px;
-    background: #007bff;
-    color: #fff;
+    border-radius: 20px;
+    background: var(--orange);
+    color: black;
     cursor: pointer;
     &:hover{
-        background: #394c73;
+        background: #80655B;
+        color: white;
     }
 `
 const CancelButton = styled(Button)`
@@ -54,7 +70,10 @@ const CancelButton = styled(Button)`
 function EditUsuarioModal({isOpen, onRequestClose, usuario, setRefresh, setEditUsuario}){
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
+    const [texto, setTexto] = useState('')
     const [foto, setFoto] = useState(null)
+
+    const MAX_DESC_LENGTH = 500;
 
     useEffect(() =>{
         if (usuario){
@@ -68,6 +87,7 @@ function EditUsuarioModal({isOpen, onRequestClose, usuario, setRefresh, setEditU
         const formData = new FormData()
         if (nome) formData.append('nome', nome)
         if (email) formData.append('email', email)
+        if (texto) formData.append('texto', texto)
         if (foto) formData.append('foto', foto)
 
         try {
@@ -81,12 +101,21 @@ function EditUsuarioModal({isOpen, onRequestClose, usuario, setRefresh, setEditU
             onRequestClose()
 
         } catch (error) {
-            console.error('Erroa ao atualizar os dados', error)
+            console.error('Erro ao atualizar os dados', error)
         }
     }
+
     const handleImageChange = (event) => {
         setFoto(event.target.files[0])
     }
+
+    const handleTextoChange = (e) => {
+        const texto = e.target.value
+        if (texto.length <= MAX_DESC_LENGTH){
+            setTexto(texto)
+        }
+    }
+
     return(
         <Modal
             isOpen={isOpen}
@@ -101,8 +130,9 @@ function EditUsuarioModal({isOpen, onRequestClose, usuario, setRefresh, setEditU
                     marginRight: '-50%',
                     transform: 'translate(-50%, -50%)',
                     border: 'none',
-                    padding: '0',
+                    padding: '1rem',
                     overflow: 'visible',
+                    borderRadius: '30px',
                 },
                 overlay:{
                     backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -110,7 +140,7 @@ function EditUsuarioModal({isOpen, onRequestClose, usuario, setRefresh, setEditU
             }}
         >
             <ModalContent>
-                <ModalHeader>Editar usuarios</ModalHeader>
+                <ModalHeader>Editar perfil</ModalHeader>
                 <Form onSubmit={handleSubmit}>
                     <Input
                         type="text"
@@ -124,6 +154,12 @@ function EditUsuarioModal({isOpen, onRequestClose, usuario, setRefresh, setEditU
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="E-mail"
                         required
+                    />
+                    <TextArea
+                        value={texto}
+                        onChange={handleTextoChange}
+                        placeholder="Descrição do usuário"
+                        rows="4"
                     />
                     <Input
                         type="file"

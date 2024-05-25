@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const SignUpContainer = styled.div`
-    margin: auto;
+    margin: 0 auto;
     align-items: center;
 
     h1 {
-        color: var(--text-black);
+        color: var(--text-white);
         font-size: 1.25rem;
         margin-bottom: 4rem;
     }
@@ -19,8 +19,8 @@ export const SignUpContainer = styled.div`
     input {
         border-radius: 15px;
         border: none;
-        background-color: var(--purple);
-        color: white;
+        background-color: var(--orange);
+        color: black;
         
         width: 100%;
         padding: 1.25rem;
@@ -38,8 +38,8 @@ export const SignUpContainer = styled.div`
     textarea {
         border-radius: 15px;
         border: none;
-        background-color: var(--purple);
-        color: white;
+        background-color: var(--orange);
+        color: black;
         
         width: 100%;
         padding: 1.25rem;
@@ -67,7 +67,7 @@ export const SignUpContainer = styled.div`
         
         border-radius: 10px;
         
-        background-color: #80655B;
+        background-color: black;
 
         color: white;
         transition: all .25s ease;
@@ -75,7 +75,7 @@ export const SignUpContainer = styled.div`
 
     button:hover {
         cursor: pointer;
-        background-color: var(--shock-pink);
+        background-color: #222;
     }
 
     a {
@@ -92,7 +92,7 @@ export const Content = styled.section`
     gap:20px;
     margin-bottom:20px;
     border-radius: 20px;
-
+    padding: 0 1rem;
 `
 
 export const StyledLink = styled(Link)`

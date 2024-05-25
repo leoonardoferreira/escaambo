@@ -4,19 +4,20 @@ import { api } from '../services/api';
 import styled from 'styled-components';
 
 const FormContainer = styled.form`
-    background: var(--aqua-green);
+    background: var(--purple);
     width: 100%;
     border-radius: 20px;
     padding: 2rem;
     max-width: 46.875rem;
-    margin: 0 1rem;
+    margin: 0 auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    color: white;
 `;
 
 function Form() {
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
-    const [telefone, setTelefone] = useState()
     const [texto, setTexto] = useState('')
     const [foto, setFoto] = useState(null)
     const [fileInputKey, setFileInputKey] = useState(Date.now())
@@ -29,7 +30,6 @@ function Form() {
         const formData = new FormData()
         formData.append('nome', nome)
         formData.append('email', email)
-        formData.append('telefone', telefone)
         formData.append('texto', texto)
         formData.append('foto', foto)
 
@@ -41,7 +41,6 @@ function Form() {
             })
             setNome('')
             setEmail('')
-            setTelefone()
             setTexto('')
             setFoto(null)
             setFileInputKey(Date.now())
@@ -81,15 +80,6 @@ function Form() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="joao@email.com"
-            required
-            />
-            <label for="tel">Número de celular*</label>
-            <input
-            id="tel"
-            type="tel"
-            value={telefone}
-            onChange={(e) => setTelefone(e.target.value)}
-            placeholder="94002-8922"
             required
             />
             <br/><br/>

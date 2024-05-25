@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
 export const ProfileContainer = styled.div`
-
+    text-align: center;
     margin: 0 auto;
+
+    a {
+        color: var(--dark-blue);
+    }
 
     main {
         padding: 0 1rem;
@@ -10,17 +14,24 @@ export const ProfileContainer = styled.div`
 
     div.headline {
         max-width: 37.5rem;
-        margin: 0 auto 1rem;
+        margin: 0 auto 3rem;
+        text-align: center;
 
         & img {
-            width: clamp(4rem, 4rem + 10vw, 8rem);
+            width: clamp(4rem, 4rem + 10vw, 9rem);
+            height: clamp(4rem, 4rem + 10vw, 9rem);
+            object-fit: cover;
+            border-radius: 50%;
         }
     }
 
     div.h1 {
-        display: flex;
         justify-content: space-between;
         margin-bottom: 1rem;
+    }
+
+    h1 {
+        margin: 1rem 0;
     }
 
     div.headline button {
@@ -33,7 +44,7 @@ export const ProfileContainer = styled.div`
     }
 
     div.categories {
-        margin: 0 auto 2rem;
+        margin: 0 auto 9rem;
         max-width: fit-content;
     }
 
@@ -60,9 +71,7 @@ export const ProfileContainer = styled.div`
     }
 
     div.buttons {
-        display: flex;
         justify-content: space-between;
-        max-width: 38rem;
         margin: 0 auto 1rem;
         align-items: center;
 
