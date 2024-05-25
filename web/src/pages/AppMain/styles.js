@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const AppMainContainer = styled.div`
-    max-width: 100rem;
     margin: 0 auto;
 
     div.categories, div.container {
@@ -59,6 +58,7 @@ export const AppMainContainer = styled.div`
     }
 
     footer {
+        padding: .5rem 0;
         position: fixed;
         bottom: 0;
         width: 100%;
@@ -67,6 +67,11 @@ export const AppMainContainer = styled.div`
         border-top: 1px solid #ccc; 
         text-align: center;
     }
+
+    a {
+        color: var(--dark-blue);
+        font-weight: bold;
+    } 
 
     @media (max-width: 375px) {
         .container {

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import Footer from "../../components/Footer";
 
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo-dark-green.svg';
 import illustrationStudying from '../../assets/illustration-studying.svg';
 import iconProfileOk from '../../assets/icon-profile-ok.svg';
 import iconLocation from '../../assets/icon-location.svg';
@@ -48,9 +48,9 @@ function Home() {
         <HomeContainer>
             <header>
                 <nav>
-                    <StyledLink to="/cadastro">Cadastre-se</StyledLink>
-                    <StyledLink to="/app">Professores</StyledLink>
                     <StyledLink to="/">A escamboo.</StyledLink>
+                    <StyledLink to="/app">Professores</StyledLink>
+                    <StyledLink to="/cadastro">Cadastre-se</StyledLink>
                 </nav>
                 <div className="headline">
                     <h1><span>aprenda</span> algo novo com <span>pessoas reais</span> de forma <span>gratuita</span></h1>
@@ -94,30 +94,6 @@ function Home() {
                 </ul>
 
             </main>
-            <section>
-                <h2>O que você pode aprender ou ensinar dentro da Skamboo?</h2>
-                <div className="carousel">
-                    <div className="carousel-item">
-                        <div className="content-wrapper">
-                            <img src="img/icon-english.svg" alt=""/>
-                            <h3>Inglês</h3>
-                           
-
-                            {/* <div className="content-wrapper">
-                                <img src ="img/icon-reforco-escolar.svg"/>
-                                <h4> Esforço escolar</h4>
-                            </div> */}
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                    </div>
-                    <div className="carousel-item">
-                        <img src="" alt=""/>
-                    </div>
-                    <div className="carousel-item"></div>
-                    <div className="carousel-item"></div>
-                </div>
-            </section>
             <section>
                 <StyledButton to="/cadastro">Comece por aqui, faça seu cadastro</StyledButton>
             </section>

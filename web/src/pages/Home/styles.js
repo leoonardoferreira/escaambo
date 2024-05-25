@@ -112,42 +112,8 @@ export const HomeContainer = styled.div`
         font-size: clamp(1rem, 1rem+.25vw, 2rem);
     }
 
-    div.carousel {
-        display: flex;
-        overflow-x: scroll;
-        gap: 1rem;
-    }
-
-    div.carousel-item {
-        display: grid;
-        place-items: center;
-
-        font-size: clamp(1.5rem, 1.5rem + 1vw, 2rem);
-
-        background-color: var(--orange);
-        width: 490px;
-        height: 24.5rem;
-        flex-shrink: 0;
-        border-radius: 20px;
-        background-image: url(img/aula-de-ingles.jpeg);
-        background-size: contain;
-    }
-
-    div.carousel-item img {
-        width: clamp(1rem, 1rem + 1vw, 1.5rem);
-    }
-    
-    @keyframes trocarImagens {
-        0% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0;
-        }
-        100% {
-            background-image: url('imagem2.jpg'); /* Troca para a segunda imagem */
-            opacity: 1;
-        }
+    footer {
+        text-align: center;
     }
 
     @media (min-width: 1024px) {

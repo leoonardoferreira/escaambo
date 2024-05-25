@@ -28,9 +28,7 @@ function AppMain() {
             <Header />
             <div className="categories">
                 <h2>O que você quer aprender?</h2>
-                <ul>
-                    <li>Escolha um(a) professor(a) para ver mais detalhes</li>
-                </ul>
+                <p>Escolha um(a) professor(a) para ver mais detalhes</p>
             </div>
             <main>
                 <div className="container">

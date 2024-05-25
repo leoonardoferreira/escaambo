@@ -6,12 +6,34 @@ import axios from 'axios';
 import { ProfileContainer } from "./styles";
 
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 
-function Profile() {
+import EditUsuarioModal from '../../components/EditUsuarioModal'
+
+function Profile({refresh, setRefresh}) {
     const { id } = useParams();
     const navigate = useNavigate();
     const [usuario, setUsuario] = useState(null);
+    const [editUsuario, setEditUsuario] = useState(null)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
+    const handleDelete = async (id) => {
+        try {
+            await axios.delete(`http://localhost:3333/api/usuarios/${id}`)
+            navigate('/app')
+        } catch (error) {
+            console.error('Erro ao deletar o usuario', error)
+        }
+    }
+
+    const handleEdit = async (id) => {
+        try {
+            const response = await axios.get(`http://localhost:3333/api/usuarios/${id}`)
+            setEditUsuario(response.data)
+            setIsModalOpen(true)
+        } catch (error) {
+            console.error('Erro ao buscar o usuario para edição', error)
+        }
+    }
 
     useEffect(() => {
         const fetchUsuario = async () => {
@@ -38,33 +60,31 @@ function Profile() {
                     <img src={`http://localhost:3333/uploads/${usuario.foto}`}alt={usuario.nome}/>
                     <div className="h1">
                         <h1>{usuario.nome}</h1>
-                        <button>Editar perfil</button>
+                        <button onClick={() => handleEdit(usuario.id)}>Editar perfil</button>
                     </div>
-                    {/* <p>
-                        {usuario.texto}
-                    </p> */}
                 </div>
                 <div className="categories">
                     <h2>O que eu posso te ensinar</h2>
-                    <ul>
-                        <li>Inglês</li>
-                        <li>Espanhol</li>
-                        <li>Matemática</li>
-                        <li>Português</li>
-                        <li>Arte</li>
-                        <li>Design</li>
-                    </ul>
-                </div>
-                <div className="images">
-                    <img alt=""/>
-                    <img alt=""/>
-                    <img alt=""/>
+                    <p>
+                        {usuario.texto}
+                    </p>
                 </div>
                 <div className="buttons">
-                    <button>Deletar conta</button>
+                    <button onClick={() => handleDelete(usuario.id)}>Deletar conta</button>
                 </div>
             </main>
-            <Footer />
+            <footer>
+                <p>escaambo.</p>
+            </footer>
+            {editUsuario && (
+                <EditUsuarioModal
+                    isOpen={isModalOpen}
+                    onRequestClose={() => setIsModalOpen(false)}
+                    usuario={editUsuario}
+                    setRefresh={setRefresh}
+                    setEditUsuario={setEditUsuario}
+                />
+            )}
         </ProfileContainer>
     );
 }

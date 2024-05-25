@@ -38,6 +38,16 @@ const HeaderContainer = styled.header`
     li img {
         width: clamp(1rem, 1rem + 1vw, 2rem);
     }
+
+    @media(max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        
+        nav {
+            margin-top: 1rem
+        }
+    }
+
 `;
 
 const StyledLink = styled(Link)`
@@ -63,7 +73,7 @@ function Header() {
                     <li>
                         <StyledLink to='/app'>
                             <img src={iconProfile} alt=""/>
-                            <p>Usuários</p>
+                            <p>Professores</p>
                         </StyledLink>
                     </li>
                     <li>

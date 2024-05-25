@@ -3,13 +3,13 @@ const db = require('../db')
 class UsuariosController {
     async create(req, res) {
         
-        const {nome, email} = req.body
+        const {nome, email, telefone, texto} = req.body
         const foto = req.file.filename
 
         // const senhaCriptografada = await hash(senha, 8);
         
         try {
-            const [result] = await db.query('INSERT INTO usuarios (nome, email, foto) VALUES (?, ?, ?)', [nome, email, foto])
+            const [result] = await db.query('INSERT INTO usuarios (nome, email, telefone, texto, foto) VALUES (?, ?, ?, ?, ?)', [nome, email, telefone, texto, foto])
             res.status(201).send(`Usuario criado com o ID: ${result.insertId}`)
         } catch(err) {
             console.error(err)
@@ -19,7 +19,7 @@ class UsuariosController {
 
     async update(req, res) {
         const id = req.params.id
-        const {nome, email} = req.body
+        const {nome, email, telefone, texto} = req.body
         const foto = req.file ? req.file.filename : null
         try{
             const fields = []
@@ -33,6 +33,16 @@ class UsuariosController {
             if(email) {
                 fields.push('email = ?')
                 values.push(email)
+            }
+
+            if(telefone) {
+                fields.push('telefone = ?')
+                values.push(telefone)
+            }
+
+            if(texto) {
+                fields.push('texto = ?')
+                values.push(texto)
             }
 
             if(foto) {

@@ -16,8 +16,6 @@ const FooterContainer = styled.footer`
 
 
     a {
-        display: flex; 
-        margin-bottom: 1rem;
         
         color: var(--text-white);
         font-weight: bold;
@@ -49,7 +47,7 @@ function Footer() {
         <FooterContainer>
                 <img className="logo" src={logo} alt=""/>
 
-                <p>Contate-nos via e-mail para esclarecer dúvidas: <a href="mailto:helloskambee@gmail.com">helloskamboo@gmail.com</a></p>
+                <p>Contate-nos via e-mail para esclarecer dúvidas: <a href="mailto:helloskambee@gmail.com">helloescaambo@gmail.com</a></p>
 
                 <img src={iconInstagram} alt="Ícone do Instagram"/>
                     

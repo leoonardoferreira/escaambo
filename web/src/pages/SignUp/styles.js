@@ -2,26 +2,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const SignUpContainer = styled.div`
-   max-width: 1000px;
     margin: auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    
-    .signup {
-        max-width: 28rem;
-        align-items: center;
-        
-        border-radius: 20px;
-        padding: 2rem 1.5rem;
-        
-        border: .5px var(--grey) solid;
-        
-        transition: all .25s;
-        
-        box-shadow: 0px 3px 7px 0 var(--grey);
-    }
 
     h1 {
         color: var(--text-black);
@@ -29,19 +11,43 @@ export const SignUpContainer = styled.div`
         margin-bottom: 4rem;
     }
 
+    label {
+        margin-bottom: 1rem;
+        display: block;
+    }
+
     input {
         border-radius: 15px;
         border: none;
+        background-color: var(--purple);
+        color: white;
         
         width: 100%;
         padding: 1.25rem;
         margin-bottom: 3rem;
         
-        border: 1px solid var(--grey);
-        
     }
 
     input::placeholder {
+        color: var(--grey);
+        font-weight: 500;
+        font-size: 1rem;
+        font-family: 'Inter', sans-serif;
+    }
+
+    textarea {
+        border-radius: 15px;
+        border: none;
+        background-color: var(--purple);
+        color: white;
+        
+        width: 100%;
+        padding: 1.25rem;
+        margin-bottom: 3rem;
+        resize: none;
+    }
+
+    textarea::placeholder {
         color: var(--grey);
         font-weight: 500;
         font-size: 1rem;
@@ -61,15 +67,19 @@ export const SignUpContainer = styled.div`
         
         border-radius: 10px;
         
-        background-color: #00ec99;
+        background-color: #80655B;
+
+        color: white;
+        transition: all .25s ease;
     }
 
     button:hover {
         cursor: pointer;
+        background-color: var(--shock-pink);
     }
 
     a {
-        color: var(--text-black);
+        color: var(--dark-blue);
         font-weight: bold;
     } 
 `;
@@ -78,19 +88,16 @@ export const Content = styled.section`
     display: flex;
     flex-direction: row;
     align-item: flex-start;
-    width: 50%;
+    margin: 0 auto;
     gap:20px;
     margin-bottom:20px;
-    background-color: FFEFD5;
-    padding: 5px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
 
 `
 
 export const StyledLink = styled(Link)`
     display: block;
-    color: var(--dark-aqua-green);
+    color: #666;
 
     font-weight: 600;
 

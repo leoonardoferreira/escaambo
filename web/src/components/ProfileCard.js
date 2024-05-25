@@ -2,33 +2,23 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom'
 
-
 const CardWrapper = styled.div`
     padding: 1rem;
 
     background-color: var(--orange);
     border-radius: 1rem;
+    text-align: center;
 
-    div.user-info {
-        margin: auto;
-    }
-
-    div.price {
-        display: flex;
-        align-items: center;
-        gap: .5rem;
-        margin-top: 1rem;
-
-        &>img {
-            max-width: 1.5rem;
-        }
+    h3 {
+        margin-bottom: 1rem;
     }
 `; 
 
 const StyledImage = styled.img`
-    width: clamp(3rem, 4rem + 1vw, 6rem);
+    width: clamp(4rem, 4rem + 1vw, 9rem);
+    height: clamp(4rem, 4rem + 1vw, 9rem);
     border-radius: 50%;
-    object-fit: fill;
+    object-fit: cover;
 `;
 
 const Button = styled.button`
@@ -36,11 +26,11 @@ const Button = styled.button`
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #007BFF;
+    background-color: var(--shock-pink);
     color: #fff;
     cursor: pointer;
     &:hover{
-        background-color: #394c73;
+        background-color: #b80f52;
     }
 `
 
@@ -59,7 +49,7 @@ function ProfileCard({usuarios}) {
                     <h3>{usuario.nome}</h3>
                     <Button onClick={() => handleLearnMore(usuario.id)}>Ver mais</Button>
                 </CardWrapper>
-                ))}
+            ))}
         </>
     )
 }

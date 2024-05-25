@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ProfileContainer = styled.div`
-    max-width: 75rem;
+
     margin: 0 auto;
 
     main {
@@ -16,7 +16,7 @@ export const ProfileContainer = styled.div`
             width: clamp(4rem, 4rem + 10vw, 8rem);
         }
     }
-    
+
     div.h1 {
         display: flex;
         justify-content: space-between;
@@ -59,25 +59,6 @@ export const ProfileContainer = styled.div`
         cursor: pointer;
     }
 
-    .images {
-        display: flex;
-        gap: 1rem;
-        overflow-x: auto;
-        max-width: min-content;
-        margin: 0 auto 1rem;
-    }
-    
-    .images img {
-        flex-shrink: 0;
-        background-color: #ebd2be;
-        height: 22.5rem;
-        width: 12.5rem;
-        border-radius: 1rem;
-        border: 0;
-        outline: 0;
-
-    }
-
     div.buttons {
         display: flex;
         justify-content: space-between;
@@ -94,14 +75,23 @@ export const ProfileContainer = styled.div`
             font-weight: 600;
         }
 
-        &>:last-child {
-            background-color: var(--shock-pink);
-            border: none;
-            padding: 1rem;
-            color: var(--text-white);
-            border-radius: 2rem;
-            font-weight: 600;
-            font-size: 1rem;
+        &:first-child:hover {
+            background-color: #990202;
         }
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    footer {
+        padding: .5rem 0;
+        position: fixed;
+        bottom: 0;
+        background-color: var(--text-white);
+
+        border-top: 1px solid #ccc; 
+        text-align: center;
+        width: 100%;
     }
 `;

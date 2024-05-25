@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SignUpContainer, Content, StyledLink } from "./styles";
+import { SignUpContainer, Content } from "./styles";
 import Form from "../../components/Form";
 import UsuarioList from '../../components/UsuarioList'
 import Header from "../../components/Header";
@@ -12,17 +12,14 @@ function SignUp() {
         <SignUpContainer>
             <Header/>
             <Content>
-                <div className="signup">
-                    <h1>Cadastre-se</h1>
-                    
-                    <Form setRefresh={setRefresh}/>
+                <Form setRefresh={setRefresh}/>
 
-                    <h1>Usuários já cadastrados</h1>
-                    <UsuarioList refresh={refresh} setRefresh={setRefresh}/>
-                </div>
+                {/* <h1>Usuários já cadastrados</h1>
+                <UsuarioList refresh={refresh} setRefresh={setRefresh}/> */}
             </Content>
-        
-            <StyledLink to="/login">Já tem uma conta? Entre aqui</StyledLink>
+            <footer>
+                <p>escaambo.</p>
+            </footer>
         </SignUpContainer>
        
     )
